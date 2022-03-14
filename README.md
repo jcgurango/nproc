@@ -1,0 +1,1 @@
+Dead simple ngrok alternative that takes in any incoming connections and parses that into an Apache configuration. Edit template_http.conf to your needs. See [ssh2 documentation](https://github.com/mscdex/ssh2) for how to set up authentication methods.
