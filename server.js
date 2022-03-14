@@ -117,6 +117,6 @@ new Server({
   }).on('error', (err) => {
     console.log(err);
   });
-}).listen(2222, '127.0.0.1', function () {
+}).listen(2222, '0.0.0.0', function () {
   console.log('Listening on port ' + this.address().port);
 });
