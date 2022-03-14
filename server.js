@@ -93,7 +93,7 @@ new Server({
             net.createServer(function (socket) {
               socket.setEncoding('utf8');
               client.forwardOut(
-                info.bindAddr, realPort,
+                info.bindAddr, info.bindPort,
                 socket.remoteAddress, socket.remotePort,
                 (err, upstream) => {
                   if (err) {
