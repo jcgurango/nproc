@@ -92,6 +92,9 @@ new Server({
 
             net.createServer(function (socket) {
               socket.setEncoding('utf8');
+              socket.on('error', (error) => {
+                console.error(error);
+              });
               client.forwardOut(
                 info.bindAddr, info.bindPort,
                 socket.remoteAddress, socket.remotePort,
@@ -102,6 +105,10 @@ new Server({
                   }
                   upstream.pipe(socket).pipe(upstream);
                 });
+
+              client.on('error', (error) => {
+                console.error(error);
+              });
             }).listen(realPort);
           } else {
             reject();
